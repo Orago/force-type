@@ -29,33 +29,33 @@ ForceType.BigInt('0x1fffffffffffff');     /* => */ 9007199254740991n
 ForceType.BigInt('0o377777777777777777'); /* => */ 9007199254740991n
 
 // String
-ForceType.String(50); /* => */ '50'
+ForceType.String(50);      /* => */ '50'
 ForceType.String('hello'); /* => */ 'hello'
-ForceType.String({}); /* => */ ''
+ForceType.String({});      /* => */ ''
 
 // Object
-ForceType.Object(50); /* => */ {}
-ForceType.Object('hello'); /* => */ 'hello'
-ForceType.Object({ cat: 'meow' }); /* => */ { cat: 'meow' }
+ForceType.Object(50);                               /* => */ {}
+ForceType.Object('hello');                          /* => */ 'hello'
+ForceType.Object({ cat: 'meow' });                  /* => */ { cat: 'meow' }
 ForceType.Object(new class cat { speak = 'meow' }); /* => */ cat {speak: 'meow'}
 
 // Array
-ForceType.Object([1,5,3,2]); /* => */ [1,5,3,2]
-ForceType.Object('hello'); /* => */ []
-ForceType.Object(['hello', 'world']); /* => */ ['hello','world']
+ForceType.Object([1,5,3,2]);                   /* => */ [1,5,3,2]
+ForceType.Object('hello');                     /* => */ []
+ForceType.Object(['hello', 'world']);          /* => */ ['hello','world']
 ForceType.Object('This is a test'.split(' ')); /* => */ ['This','is','a','test']
 
 import { tryArray } from '@orago/status';
 
-tryArray('[5, 4, 1]'); /* => */ [5,4,1]
+tryArray('[5, 4, 1]');  /* => */ [5,4,1]
 tryArray([6, 3, 6, 2]); /* => */ [6,3,6,2]
-tryArray({ hi: 'd' }); /* => */ []
-tryArray(''); /* => */ []
+tryArray({ hi: 'd' });  /* => */ []
+tryArray('');           /* => */ []
 
 import { tryObject } from '@orago/status';
 
-tryObject('[5, 4, 1]'); /* => */ {}
+tryObject('[5, 4, 1]');  /* => */ {}
 tryObject([6, 3, 6, 2]); /* => */ {}
-tryObject({ hi: 'd' }); /* => */ { hi: 'd' }
-tryObject(''); /* => */ {}
+tryObject({ hi: 'd' });  /* => */ { hi: 'd' }
+tryObject('');           /* => */ {}
 ```
