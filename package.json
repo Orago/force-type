@@ -1,0 +1,16 @@
+{
+  "name": "@orago/force-type",
+  "version": "1.0.0",
+  "description": "Basic javascript strict typing",
+  "main": "src/index.js",
+  "scripts": {
+		"start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/orago/force-type.git"
+  },
+  "author": "Orago",
+  "license": "MIT"
+}
