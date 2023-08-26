@@ -12,6 +12,8 @@ function objFrom(obj, keys) {
 
 	return res;
 }
+exports.objFrom = objFrom;
+
 
 class safeJSON {
 	static parse (input){
@@ -19,18 +21,27 @@ class safeJSON {
 		catch (E) { return {}; };
 	}
 }
+exports.safeJSON = safeJSON;
+
 
 function tryObject (input) {
 	return ForceType.Object(safeJSON.parse(input));
 }
+exports.tryArray = tryArray;
+
+function tryNumber ($){
+  if (typeof $ == 'number') return $;
+
+  if (typeof $ == 'string' && isNaN($) != true)
+    return Number($);
+
+  return 0;
+}
+exports.tryNumber = tryNumber;
 
 function tryArray($) {
 	return ForceType.Array(
 		safeJSON.parse($)
 	);
 }
-
-exports.objFrom = objFrom;
-exports.safeJSON = safeJSON;
-exports.tryArray = tryArray;
 exports.tryObject = tryObject;
