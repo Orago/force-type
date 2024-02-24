@@ -1,17 +1,15 @@
-const { ForceType } = require('./forceTypeModule.js');
+import { ForceType } from './forceTypeModule';
 
-function resolveTyped(input, type) {
+export function resolveTyped(input: any, type: any) {
 	switch (type) {
 		case null:
-		case 'null': return ForceType.Null(input);
+		case 'null': return ForceType.Null();
 
 		case Boolean:
 		case 'boolean': return ForceType.Boolean(input);
 
 		case Number:
 		case 'number': return ForceType.Number(input);
-
-		case 'bigint': return ForceType.BigInt(input);
 
 		case String:
 		case 'string': return ForceType.String(input);
@@ -25,5 +23,3 @@ function resolveTyped(input, type) {
 		default: return input;
 	}
 }
-
-module.exports = resolveTyped;

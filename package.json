@@ -1,16 +1,19 @@
 {
   "name": "@orago/force-type",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Basic javascript strict typing",
-  "main": "src/index.js",
+  "main": "js/index.js",
   "scripts": {
-		"start": "node src/index.js",
+    "install": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-	"repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/orago/force-type.git"
   },
   "author": "Orago",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.3.3"
+  }
 }
